@@ -1,4 +1,4 @@
-.PHONY: install test lint format
+.PHONY: install test lint format run
 
 install:
 	poetry install
@@ -8,4 +8,7 @@ lint:
 	poetry run ruff check .
 format:
 	poetry run ruff format .
+
+run:
+	poetry run uvicorn ai_bug_investigator.api.main:app --reload --port 8000
 	

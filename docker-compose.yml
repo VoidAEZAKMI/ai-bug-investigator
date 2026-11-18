@@ -1,0 +1,10 @@
+services:
+  agent:
+    build: .
+    image: ai-bug-investigator          
+    container_name: ai-bug-investigator
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    restart: unless-stopped

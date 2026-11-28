@@ -1,4 +1,4 @@
-.PHONY: install test lint format run
+.PHONY: install test lint format run tunnel
 
 install:
 	poetry install
@@ -12,3 +12,5 @@ format:
 run:
 	poetry run uvicorn ai_bug_investigator.api.main:app --reload --port 8000
 	
+tunnel:
+	cloudflared tunnel --url http://localhost:8000

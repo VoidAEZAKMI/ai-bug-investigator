@@ -14,3 +14,5 @@ workspaces/
 .idea/
 .vscode/
 .DS_Store
+
+var/

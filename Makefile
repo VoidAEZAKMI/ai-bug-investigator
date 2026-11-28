@@ -1,4 +1,4 @@
-.PHONY: install test lint format run build up down logs
+.PHONY: install test lint format run tunnel build up down logs
 
 install:
 	poetry install
@@ -14,6 +14,9 @@ format:
 
 run:
 	poetry run uvicorn ai_bug_investigator.api.main:app --reload --port 8000
+
+tunnel:
+	cloudflared tunnel --url http://localhost:8000
 
 build:
 	docker compose build
